@@ -1,0 +1,91 @@
+cmake_minimum_required(VERSION 3.30)
+project(hpc)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(ch02/cmakecode/vecmatrix/include)
+include_directories(ch02/g++code/include)
+include_directories(ch02/makecode/include)
+include_directories(ch03/fma)
+include_directories(ch03/hash)
+
+add_executable(hpc
+    ch02/cmakecode/lang/vecadd.cpp
+    ch02/cmakecode/parameters/vecadd.cpp
+    ch02/cmakecode/program/program.cpp
+    ch02/cmakecode/vecmatrix/include/matrix.h
+    ch02/cmakecode/vecmatrix/include/timecounters.h
+    ch02/cmakecode/vecmatrix/src/matrix.cpp
+    ch02/cmakecode/vecmatrix/src/vecadd.cpp
+    ch02/debugging/gdbcode/debugcode.cpp
+    ch02/debugging/gdbcode/heap_buffer_overflow.cpp
+    ch02/debugging/sanitizer/heap_buffer_overflow.cpp
+    ch02/debugging/threads/gdbthread.cpp
+    ch02/debugging/valgrind/leak.cpp
+    ch02/g++code/gvso0/vecmatrix.cpp
+    ch02/g++code/include/matrix.h
+    ch02/g++code/include/timecounters.h
+    ch02/g++code/src/matrix.cpp
+    ch02/g++code/preproc.cpp
+    ch02/g++code/vecmatrix.cpp
+    ch02/g++code/vecmatrixopt.cpp
+    ch02/g++code/warningerror.cpp
+    ch02/makecode/include/matrix.h
+    ch02/makecode/include/timecounters.h
+    ch02/makecode/src/matrix.cpp
+    ch02/makecode/vecmatrix.cpp
+    ch03/aliasing/aliasing.cpp
+    ch03/align/c++17.cpp
+    ch03/fma/cxxfma512.cpp
+    ch03/fma/fma512.c
+    ch03/fma/fma512.h
+    ch03/hash/batchcache.c
+    ch03/hash/batchload.c
+    ch03/hash/batchload1.c
+    ch03/hash/batchload2.c
+    ch03/hash/benchmark.h
+    ch03/locality/bighash.cpp
+    ch03/locality/hash.cpp
+    ch03/matmul/matmul.cpp
+    ch03/matmul/matmul.opt.cpp
+    ch03/matrixversion/matrixknmkn.cpp
+    ch03/matrixversion/matrixmkn.cpp
+    ch03/matrixversion/matrixmnk.cpp
+    ch03/matrixversion/matrixopt.cpp
+    ch03/roofline/roof.cpp
+    ch03/stream/stream.c
+    ch03/topdown/topdown.cpp
+    ch03/topdown/topdown.no.assign.cpp
+    homework3/conv.cpp
+    homework3/gather.cpp
+    homework3/permute.cpp
+    openmp/omp/conflicts.cpp
+    openmp/omp/copyprivate.cpp
+    openmp/omp/default.cpp
+    openmp/omp/firstomp.cpp
+    openmp/omp/master.cpp
+    openmp/omp/pthreads.cpp
+    openmp/omp/sections.cpp
+    openmp/omp/single.cpp
+    openmp/pi/atomic-pi.cpp
+    openmp/pi/critical-pi.cpp
+    openmp/pi/false-share-pi.cpp
+    openmp/pi/omit-false-share-pi.cpp
+    openmp/pi/reduction-pi.cpp
+    openmp/pi/task-pi.cpp
+    openmp/prime/prime-dynamic.cpp
+    openmp/prime/prime-static.cpp
+    openmp/task/taskgroup.cpp
+    openmp/task/taskwait.cpp
+        pthread/condvar.cpp
+    pthread/dotprod_mutex.cpp
+    pthread/multithreads.cpp
+    pthread/mutex.cpp
+    pthread/seq-queue.cpp
+    pthread/threadcreate.cpp
+    homework1.cpp
+    homework2.cpp
+        practice/cuda/addVectors.cpp
+        practice/cuda/c/CodeSamples/chapter02/sumArraysOnGPU-small-case.cu
+        practice/cuda/c/CodeSamples/chapter01/hello.cu
+        practice/cuda/c/CodeSamples/chapter02/sumArraysOnGPU-timer.cu)
